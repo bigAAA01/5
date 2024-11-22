@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Studio</title>
+    <style>
+        /* Стили для основного контента */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            margin: 0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .price span {
+            color: #333;
+            font-size: 14px;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #444;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Плавающая кнопка для звонка */
+        .call-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .call-button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Мобильная адаптивность */
+        @media screen and (max-width: 768px) {
+            .service-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .contact-form input,
+            .contact-form select,
+            .contact-form textarea {
+                padding: 8px;
+            }
+
+            .contact-form button {
+                width: 100%;
+            }
+        }
+
+        /* Стиль для изображений */
+        .service-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Beauty Studio</h1>
+    <p>Добро пожаловать в наш салон красоты</p>
+</header>
+
+<div class="main-content">
+    <section>
+        <h2>Наши Услуги</h2>
+        <div class="service-item">
+            <div>
+                <h3>Стрижка</h3>
+                <p>Современные стрижки для любого типа волос.</p>
+            </div>
+            <div class="price">
+                1500 <span>руб.</span>
+            </div>
+        </div>
+        <div class="service-item">
+            <div>
+                <h3>Маникюр</h3>
+                <p>Все виды маникюра с использованием качественных материалов.</p>
+            </div>
+            <div class="price">
+                800 <span>руб.</span>
+            </div>
+        </div>
+        <div class="service-item">
+            <div>
+                <h3>Макияж</h3>
+                <p>Профессиональный макияж для любого случая.</p>
+            </div>
+            <div class="price">
+                2000 <span>руб.</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Галерея</h2>
+        <div class="service-images">
+            <!-- Пример изображений -->
+            <img src="https://via.placeholder.com/800x600" alt="Фото услуги 1">
+            <img src="https://via.placeholder.com/800x600" alt="Фото услуги 2">
+        </div>
+    </section>
+
+    <section>
+        <h2>Форма Обратной Связи</h2>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Имя" required>
+            <input type="tel" name="phone" placeholder="Номер телефона" required>
+            <label for="query-type">Вид запроса:</label>
+            <select name="query-type" id="query-type" required>
+                <option value="appointment">Запись на прием</option>
+                <option value="question">Вопрос</option>
+            </select>
+
+            <div id="appointment-details" style="display:none;">
+                <label for="service">Услуга:</label>
+                <select name="service" id="service">
+                    <option value="haircut">Стрижка</option>
+                    <option value="manicure">Маникюр</option>
+                    <option value="makeup">Макияж</option>
+                </select>
+                <label for="date">Дата:</label>
+                <input type="date" name="date" id="date" required>
+                <label for="time">Время:</label>
+                <input type="time" name="time" id="time" required>
+            </div>
+
+            <textarea name="message" placeholder="Ваш вопрос или комментарий"></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p>Телефон: <a href="tel:+79999999999" style="color: white;">+7 999 999 99 99</a></p>
+    <p>Мы в соцсетях:</p>
+    <a href="#" target="_blank"><img src="https://via.placeholder.com/40" alt="Instagram" /></a>
+    <a href="#" target="_blank"><img src="https://via.placeholder.com/40" alt="Facebook" /></a>
+    <a href="#" target="_blank"><img src="https://via.placeholder.com/40" alt="VK" /></a>
+</footer>
+
+<!-- Плавающая кнопка звонка -->
+<a href="tel:+79999999999">
+    <button class="call-button">📞</button>
+</a>
+
+<script>
+    // Показываем дополнительные поля для записи на прием
+    const queryType = document.getElementById('query-type');
+    const appointmentDetails = document.getElementById('appointment-details');
+
+    queryType.addEventListener('change', function() {
+        if (queryType.value === 'appointment') {
+            appointmentDetails.style.display = 'block';
+        } else {
+            appointmentDetails.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
